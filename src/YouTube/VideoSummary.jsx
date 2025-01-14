@@ -1,16 +1,15 @@
 import { bgcolor, width } from "@mui/system";
 
 
-export default function VideoSummary() {
+export default function VideoSummary(props) {
     return (
         <div 
           style={{
-            backgroundColor: 'lightblue',
-            width: '100%',
-            height: '56px'
+            backgroundColor: props.Even?"green":"blue",
+            height: '124px'
           }}
         >
-          Video Summary
+          {props.Text}
         </div>
       )
 }

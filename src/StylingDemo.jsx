@@ -15,6 +15,9 @@ const MySpecialityBox = props => {
   )
 }
 
+const CurrentDate = new Date(2022,6,1,23,45,22,323)
+const Year = CurrentDate.getFullYear
+
 const MyStyledButton = styled(Button)({
   color: "red",
   backgroundColor: "blue",
@@ -105,11 +108,20 @@ function StylingDemo() {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const[value, setValue] = useState([]);
+  const[isMouseHover,setMouseHover] = useState(false)
   // const [open, setOpen] = useState(false)
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+  const handleMouseHover = () => {
+    setMouseHover(true)
+  };
+  const handleMouseOut = () => {
+    setMouseHover(false)
+  };
+
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -120,6 +132,13 @@ function StylingDemo() {
   return (
     <>
       <h1>Hello World</h1>
+<Button 
+style={{backgroundColor:isMouseHover?"black":"white"}}
+onMouseOver={handleMouseHover}
+onMouseOut={handleMouseOut}>
+  Submit
+</Button>
+
     {/*<Button onClick={() => console.log("Button Clicked")} variant="contained">My Button</Button>*/}
     {/*<Button component="a" variant="contained">My Button</Button>*/}
     {/* console.log prints to browser console and not to vscode debug console */} 

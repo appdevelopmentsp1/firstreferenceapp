@@ -1,16 +1,16 @@
 import { bgcolor, width } from "@mui/system";
 
 
-export default function TopBar() {
+export default function Header() {
     return (
-        <div 
+        <Header 
           style={{
             backgroundColor: 'lightblue',
-            width: '100%',
+            //width: '100%',
             height: '56px'
           }}
         >
           Top Bar Div
-        </div>
+        </Header>
       )
 }
